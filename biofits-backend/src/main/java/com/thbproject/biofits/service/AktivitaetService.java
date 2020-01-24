@@ -77,7 +77,7 @@ public class AktivitaetService {
             aktivitaet.setEndDatum(DateUtils.addHours(aktivitaet.getStartDatum(), settings.getActivityDuration()));
             aktivitaet.setAktuelStartDatum(new Date());
             aktivitaet.setAktuelEndDatum(null);
-            aktivitaet.setZiel(zielRechnungService.rechnen(benutzerId, sportArtId));
+            aktivitaet.setZiel(zielRechnungService.rechnen(benutzerId, sportArtId, 1));
         } else {
             criteria = new AktivitaetCriteria();
             criteria.setBenutzerId(benutzerId);
@@ -96,7 +96,7 @@ public class AktivitaetService {
                 aktivitaet.setEndDatum(DateUtils.addDays(aktivitaet.getStartDatum(), settings.getActivityDuration()));
                 aktivitaet.setAktuelStartDatum(new Date());
                 aktivitaet.setAktuelEndDatum(null);
-                aktivitaet.setZiel(zielRechnungService.rechnen(benutzerId, sportArtId));
+                aktivitaet.setZiel(zielRechnungService.rechnen(benutzerId, sportArtId, 1));
             } else {
                 aktivitaet = aktivitaeten.get(0);
                 aktivitaet.setAktuelStartDatum(new Date());
@@ -238,7 +238,7 @@ public class AktivitaetService {
             aktivitaet.setEndDatum(DateUtils.addSeconds(aktivitaet.getStartDatum(), settings.getActivityDuration()));
             aktivitaet.setAktuelStartDatum(new Date());
             aktivitaet.setAktuelEndDatum(null);
-            aktivitaet.setZiel(zielRechnungService.rechnen(benutzerId, sportArtId));
+            aktivitaet.setZiel(zielRechnungService.rechnen(benutzerId, sportArtId, 1));
         } else {
             aktivitaet = aktivitaeten.get(0);
             if (aktivitaet.getEndDatum().before(date)) {
@@ -250,7 +250,7 @@ public class AktivitaetService {
                 aktivitaet.setEndDatum(DateUtils.addSeconds(aktivitaet.getStartDatum(), settings.getActivityDuration()));
                 aktivitaet.setAktuelStartDatum(new Date());
                 aktivitaet.setAktuelEndDatum(null);
-                aktivitaet.setZiel(zielRechnungService.rechnen(benutzerId, sportArtId));
+                aktivitaet.setZiel(zielRechnungService.rechnen(benutzerId, sportArtId, 1));
             }
         }
 
